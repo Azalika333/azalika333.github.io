@@ -1,133 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Азалия Хафизова - Веб-разработчик </title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-
-<header> 
-<nav>
-<div class="logo">Азалия Хафизова</div> 
-<div class="menu">
-    <ul>
-    <li>Обо мне</li>
-    <li>Услуги</li> 
-    <li>Кейсы</li> 
-    <li>Прайс</li> 
-    <li>Отзывы</li> 
-    <li>Контакты</li> 
-    </ul>
-</div>
-</nav>
-</header>
-<div class="main"> <div class="title_container">
-    <h1>Привет<br>Я Азалия Хафизова</h1>
-    <h4>Фулл стек веб-разработчик</h4>
-    <input type="submit" value="Обо мне">    
-    <input type="submit" value="Мои работы"> 
-</div></div>
-<div class="main2"> <div class="title_page2">
-    <h2>Обо мне</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur <br> autem odio inventore quia voluptas quibusdam. Expedita recusandae deserunt sint?</p>   
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur <br> autem odio inventore quia voluptas quibusdam. Expedita recusandae deserunt sint?</p>
-    
-    <input type="submit" value="Скачать резюме"> </div>
-       
-    <div class="title_page2_1"> <h2>Что я умею</h2>
-    
-    <ul>
-        <li1>Веб-дизайн</li1>
-        <li2>Разработка</li2>
-        <li3>CEO-Оптимизация</li3>
-        <li4>Маркетинг</li4>
-    </ul>
-    
-    <div class="disk2">
-    <p1>Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. <br> Magnam, sed.</p1>
-    <p2>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. <br> Magnam, sed.</p2>
-    <p3>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. <br> Magnam, sed.</p3>
-    <p4>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. <br> Magnam, sed.</p4>
+    <div class="preloader">
+        <div class="preloader__row">
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+        </div>
     </div>
-</div></div>
 
-<div class="title_page3">
-    <h2>Кейсы</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, incidunt?</p>
-    <ul>
-        <li1><b>CLIENT:</b> <br> <span>Какая-то компания</span></li1>  
-        <li2><b>WEBSITE:</b> <br> <span><a href="http://www.somedomain.com" target="_blank">http://www.somedomain.com</a></span></li2> 
-        <li3><b>Название проекта</b> <br> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Voluptates, eos, sit. Optio eaque quod corporis earum quasi, eos officia harum, <br> dignissimos doloremque placeat error sequi. Necessitatibus velit asperiores et optio?</span></li3>
-      </ul>
-      <input type="submit" value="VISIT LIVE SITE">
-   </div>
-<div class="title_page4">
-    <h3>Расчет стоимости</h3>
+    <script>
+        window.onload = function() {
+            document.body.classList.add('loaded_hiding');
+            window.setTimeout(function() {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+            }, 500);
+        }
 
-    <h5>ТИП САЙТА</h5>
-      
-       <select name="Тип сайта" id="list"> 
-        <option selected disabled>Выберите пункт...</option>
-        <option value="2">Сайт-визитка</option>
-        <option value="3">Web-сервис</option>
-        <option value="4">Новостной сайт</option>
+    </script>
+
+    <header>
+        <nav>
+            <div class="logo">Азалия Хафизова</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Обо мне</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Кейсы</a></li>
+                    <li><a href="#">Прайс</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="main">
+            <div class="title_container">
+                <h1>Привет<br>Я Азалия Хафизова</h1>
+                <h4>Фулл стек веб-разработчик</h4>
+                <input type="button" value="Обо мне">
+                <input type="button" value="Мои работы">
+            </div>
+        </section>
+    </main>
+    <section class="page2">
+        <div class="title_page2">
+            <h2>Обо мне</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur <br> autem odio inventore quia voluptas quibusdam. Expedita recusandae deserunt sint?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur <br> autem odio inventore quia voluptas quibusdam. Expedita recusandae deserunt sint?</p>
+
+            <input type="submit" value="Скачать резюме">
+        </div>
+
+        <div class="title_page2_1">
+            <h2>Что я умею</h2>
+
+            <ul>
+                <li1>Веб-дизайн</li1>
+                <li2>Разработка</li2>
+                <li3>CEO-Оптимизация</li3>
+                <li4>Маркетинг</li4>
+            </ul>
+
+            <div class="disk2">
+                <p1>Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit. <br> Magnam, sed.</p1>
+                <p2>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. <br> Magnam, sed.</p2>
+                <p3>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. <br> Magnam, sed.</p3>
+                <p4>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. <br> Magnam, sed.</p4>
+            </div>
+        </div>
+    </section>
+
+    <section class="title_page3">
+        <h2>Кейсы</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, incidunt?</p>
+        <ul>
+            <li1><b>CLIENT:</b> <br> <span>Какая-то компания</span></li1>
+            <li2><b>WEBSITE:</b> <br> <span><a href="http://www.somedomain.com" target="_blank">http://www.somedomain.com</a></span></li2>
+            <li3><b>Название проекта</b> <br> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Voluptates, eos, sit. Optio eaque quod corporis earum quasi, eos officia harum, <br> dignissimos doloremque placeat error sequi. Necessitatibus velit asperiores et optio?</span></li3>
+        </ul>
+        <input type="submit" value="VISIT LIVE SITE">
+    </section>
+    <section class="title_page4">
+        <h3>Расчет стоимости</h3>
+
+        <h5>ТИП САЙТА</h5>
+
+        <select name="Тип сайта" id="list">
+            <option selected disabled>Выберите пункт...</option>
+            <option value="2">Сайт-визитка</option>
+            <option value="3">Web-сервис</option>
+            <option value="4">Новостной сайт</option>
         </select>
-        
-    <h5>ДИЗАЙН</h5>
-      
-       <select name="Тип сайта" id="list"> 
-        <option selected disabled>Выберите пункт...</option>
-        <option value="2">Дизайн 1</option>
-        <option value="3">Дизайн 2</option>
-        <option value="4">Дизайн 3</option>
+
+        <h5>ДИЗАЙН</h5>
+
+        <select name="Тип сайта" id="list">
+            <option selected disabled>Выберите пункт...</option>
+            <option value="2">Дизайн 1</option>
+            <option value="3">Дизайн 2</option>
+            <option value="4">Дизайн 3</option>
         </select>
-        
-    <h5>АДАПТИВНОСТЬ</h5>
-      
-       <select name="Тип сайта" id="list"> 
-        <option selected disabled>Выберите пункт...</option>
-        <option value="2">Телефон</option>
-        <option value="3">Компьютер</option>
-        <option value="4">Телефон и компьютер</option>
+
+        <h5>АДАПТИВНОСТЬ</h5>
+
+        <select name="Тип сайта" id="list">
+            <option selected disabled>Выберите пункт...</option>
+            <option value="2">Телефон</option>
+            <option value="3">Компьютер</option>
+            <option value="4">Телефон и компьютер</option>
         </select>
-    <p>Сроки</p>   
-    <p>Стоимость</p>
-    
-<div class="page_4_1">
-    
-<h2>Немного статистики</h2>
-<p1>120</p1> 
-<h7>счастливых клиентов</h7>
-<p2>4,600</p2>
-<h8>часов работы</h8>
-<p3>340</p3>
-<h9>проектов завершено</h9>
-<p4>23</p4>
-<h10>наград получено</h10></div>
+        <p>Сроки</p>
+        <p>Стоимость</p>
+    </section>
+    <section class="page4">
+        <section class="page_4_1">
+            <div class="paralax">
+                <h2>Немного статистики</h2>
+                <p1>120</p1>
+                <h7>счастливых клиентов</h7>
+                <p2>4,600</p2>
+                <h8>часов работы</h8>
+                <p3>340</p3>
+                <h9>проектов завершено</h9>
+                <p4>23</p4>
+                <h10>наград получено</h10>
+            </div>
+        </section>
 
-<div class="page_42">
-<h2>Отзывы</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint porro  <br> ut eos minima excepturi asperiores iusto voluptatum ullam dolor assumenda.</p>
-<p><b>Михаил</b>, Ген директор ПАО "ГАЗПРОМ"</p>
-</div></div>
+        <section class="page_42">
+            <h2>Отзывы</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint porro <br> ut eos minima excepturi asperiores iusto voluptatum ullam dolor assumenda.</p>
+            <p><b>Михаил</b>, Ген директор ПАО "ГАЗПРОМ"</p>
+        </section>
+    </section>
 
-<div class="title_page5">
-    <h2>Мои контакты</h2>
-    <p1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, adipisci.</p1>
-    
-    <a href="https://www.google.ru/maps/place/ул.+Архитектурная,+5А,+Уфа,+Респ.+Башкортостан,+450112/@54.8181231,56.0775823,17z/data=!3m1!4b1!4m5!3m4!1s0x43d9481de6ba29a7:0x2fe530b4363939ce!8m2!3d54.81812!4d56.079771" target="_blank"><address>г.Уфа,  <br> Архитектурная 5А</address></a>
-    <a href="azalika333@gmail.com" target="_blank"><h3>azalika333@gmail.com</h3></a>
-    <p>+7 937 155-83-33</p>
-    <h4>Оставьте мне сообщение</h4>
-    <input type="text1" placeholder="Имя"> <input type="text2" placeholder="Email"> 
-    <br>
-    <textarea name="Сообщение" id="1"
-    placeholder="Сообщение"></textarea>
-    <br>
-    <input type="submit" value="Отправить">
-</div>
+    <footer class="page5">
+        <h2>Мои контакты</h2>
+        <p1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, adipisci.</p1>
 
+        <a href="https://www.google.ru/maps/place/ул.+Архитектурная,+5А,+Уфа,+Респ.+Башкортостан,+450112/@54.8181231,56.0775823,17z/data=!3m1!4b1!4m5!3m4!1s0x43d9481de6ba29a7:0x2fe530b4363939ce!8m2!3d54.81812!4d56.079771" target="_blank">
+            <address>г.Уфа, <br> Архитектурная 5А</address>
+        </a>
+        <a href="azalika333@gmail.com" target="_blank">
+            <h3>azalika333@gmail.com</h3>
+        </a>
+        <p>+7 937 155-83-33</p>
+        <h4>Оставьте мне сообщение</h4>
+        <input type="text1" placeholder="Имя"> <input type="email" autocomplete="email" required placeholder="Email">
+        <br>
+        <textarea name="Сообщение" id="1" placeholder="Сообщение"></textarea>
+        <br>
+        <input type="submit" value="Отправить">
+    </footer>
 </body>
+
 </html>

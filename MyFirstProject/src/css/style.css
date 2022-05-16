@@ -1,61 +1,157 @@
-body{
+body {
     font-family: Arial, sans-serif;
 }
-nav{
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #f3eff3;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #384a63;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+nav {
     width: 100%;
     height: 50px;
     background: #344051;
+    position: fixed;
 }
 
-.logo{
+.logo {
     color: white;
     font-size: 18px;
     line-height: 50px;
     padding-left: 280px;
     float: left;
+    -webkit-animation: logo 2s;
+    -o-animation: logo 2s;
+    animation: logo 2s;
 }
 
-.menu{
+@keyframes logo {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.menu {
     float: left;
     padding-left: 360px;
-    
+
 }
 
-.menu li{
+.menu li {
     float: left;
     line-height: 50px;
     color: white;
     margin-right: 40px;
     font-size: 14px;
     text-transform: uppercase;
-    
+    -webkit-animation: _menu 0.4s forwards;
+    -o-animation: _menu 0.4s forwards;
+    animation: _menu 0.4s forwards;
+    opacity: 0;
+
 }
 
-.main{
+.main {
     width: 100%;
-    height: calc(100% - 50px);
-    background: url(../img/%D1%82%D0%B5%D0%BD%D1%8C.png) 0px 640px/100% no-repeat, url(../img/me.png) 90% 100%/45% no-repeat, url(../img/bg.jpg) center/cover no-repeat;
+    height: 100%;
+    background: url(../img/%D1%82%D0%B5%D0%BD%D1%8C.png) 0px 104%/100% 70px no-repeat, url(../img/me.png) 90% 100%/45% no-repeat, url(../img/bg.jpg) center/cover no-repeat;
 }
 
-.title_container{
+.title_container {
     float: left;
     margin: 280px 0px 0px 200px;
     color: #2c384a;
     text-align: center;
+    opacity: 0;
+    -webkit-animation: title 2.4s forwards;
+    -o-animation: title 2.4s forwards;
+    animation: title 2.4s forwards;
+    animation-delay: 2s;
 }
 
-.title_container h1{
+.title_container h1 {
     font-size: 45px;
     font-weight: bold;
 }
 
-.title_container h4{
+.title_container h4 {
     margin-top: 20px;
     font-size: 20px;
     color: #79818d;
 }
 
-.title_container input{
+.title_container input {
     height: 40px;
     text-align: center;
     border: 2px solid #6d7682;
@@ -65,33 +161,108 @@ nav{
     font-size: 16px;
     padding: 0px 16px;
     margin: 35px 14px 0px 14px;
+    transition: all 0.2s;
+    transform: scale(1);
 }
 
-.title_page2{
+@keyframes title {
+    from {
+        opacity: 0;
+        margin-left: -500px;
+    }
+
+    to {
+        opacity: 1;
+        margin-left: 200px;
+    }
+}
+
+.title_container input:hover {
+    background: #344051;
+    color: white;
+}
+
+.title_container input:active {
+    transform: scale(1.1);
+}
+
+.menu li a {
+    transition: all 0.1s;
+    color: white;
+    transform: scale(1);
+    display: inline-block;
+
+}
+
+.menu li a:visited {
+    color: white;
+}
+
+.menu li a:hover {
+    color: #ef8b08;
+}
+
+.menu li a:active {
+    transform: scale(1.1);
+}
+
+.menu li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.menu li:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.menu li:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.menu li:nth-child(5) {
+    animation-delay: 1.6s;
+}
+
+.menu li:nth-child(6) {
+    animation-delay: 2s;
+}
+
+@keyframes _menu {
+    from {
+        opacity: 0;
+        margin-top: -50px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.title_page2 {
     width: 100%;
     height: 100%;
     background: url(../img/%D0%A4%D0%BE%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D1%81%D0%BB%D0%BE%D0%B9.png) center/cover no-repeat;
 }
 
-.title_page2 h2{
+.title_page2 h2 {
     color: #263244;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
     margin: 40px 0px 40px 0px;
-    text-align: center; 
+    text-align: center;
     background: url(../img/%D0%A7%D0%B5%D1%80%D1%82%D0%B0%20%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0.png) center 40px no-repeat, url(../img/me-round2.png) center 80px/200px 200px no-repeat;
     width: 100%;
-    height: 280px;  
+    height: 280px;
 }
 
-.title_page2 p{
+.title_page2 p {
     color: #6f707e;
     margin: 10px 0px 30px 0px;
     text-align: center;
 }
 
-.title_page2 input{
+.title_page2 input {
     height: 30px;
     text-align: center;
     border: 2px solid #6d7682;
@@ -104,27 +275,37 @@ nav{
     background: url(../img/%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8.png) 5px 5px/auto no-repeat;
     width: 150px;
     padding-right: 5px;
+    transition: all 0.4s;
 }
 
-.title_page2_1{
+.title_page2 input:hover{
+    background-color: #6d7682;
+    color: white;
+}
+
+.title_page2 input:active{
+   transform: scale(1.1);
+}
+
+.title_page2_1 {
     width: 100%;
     height: 400px;
-    background: url(../img/%D0%BD%D0%BE%D1%83%D1%82.png) 26% 170px/45px 30px no-repeat,url(../img/знак.png) 42% 170px/40px 30px no-repeat, url(../img/ракета.png) 58% 170px/30px 30px no-repeat, url(../img/граммофон.png) 74% 170px/30px 30px no-repeat, url(../img/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%20%D1%84%D0%BE%D0%BD%D0%B0.png) center/cover no-repeat;
+    background: url(../img/%D0%BD%D0%BE%D1%83%D1%82.png) 26% 170px/45px 30px no-repeat, url(../img/знак.png) 42% 170px/40px 30px no-repeat, url(../img/ракета.png) 58% 170px/30px 30px no-repeat, url(../img/граммофон.png) 74% 170px/30px 30px no-repeat, url(../img/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%20%D1%84%D0%BE%D0%BD%D0%B0.png) center/cover no-repeat;
 }
 
-.title_page2_1 h2{
+.title_page2_1 h2 {
     color: #263244;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
     margin: 40px 0px 40px 0px;
-    text-align: center; 
+    text-align: center;
     padding-top: 40px;
     background: url(../img/%D0%A7%D0%B5%D1%80%D1%82%D0%B0%20%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0.png) center 80px no-repeat;
     height: 210px;
-}  
+}
 
-.title_page2_1 li1{
+.title_page2_1 li1 {
     display: block;
     color: #f79109;
     margin: -20px 5px 20px 24%;
@@ -132,7 +313,7 @@ nav{
     font-weight: bold;
 }
 
-.title_page2_1 li2{
+.title_page2_1 li2 {
     display: block;
     color: #f79109;
     margin: -35px 5px 20px 39.5%;
@@ -140,7 +321,7 @@ nav{
     font-weight: bold;
 }
 
-.title_page2_1 li3{
+.title_page2_1 li3 {
     display: block;
     color: #f79109;
     margin: -35px 5px 20px 54%;
@@ -148,7 +329,7 @@ nav{
     font-weight: bold;
 }
 
-.title_page2_1 li4{
+.title_page2_1 li4 {
     display: block;
     color: #f79109;
     margin: -35px 5px 20px 71%;
@@ -156,7 +337,7 @@ nav{
     font-weight: bold;
 }
 
-.disk2 p1{
+.disk2 p1 {
     display: block;
     line-height: 20px;
     color: #3f495a;
@@ -166,7 +347,7 @@ nav{
     text-align: center;
 }
 
-.disk2 p2{
+.disk2 p2 {
     display: block;
     line-height: 20px;
     color: #3f495a;
@@ -176,7 +357,7 @@ nav{
     text-align: center;
 }
 
-.disk2 p3{
+.disk2 p3 {
     display: block;
     line-height: 20px;
     color: #3f495a;
@@ -184,9 +365,9 @@ nav{
     padding: 0px;
     font-size: 14px;
     text-align: center;
-} 
+}
 
-.disk2 p4{
+.disk2 p4 {
     display: block;
     line-height: 20px;
     color: #3f495a;
@@ -194,50 +375,50 @@ nav{
     padding: 0px;
     font-size: 14px;
     text-align: center;
-} 
+}
 
-.title_page3 h2{
+.title_page3 h2 {
     color: #263244;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
-    text-align: center; 
+    text-align: center;
     background: url(../img/%D0%A7%D0%B5%D1%80%D1%82%D0%B0%20%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0.png) center 40px no-repeat;
     height: 80px;
     margin-top: 40px;
 }
 
-.title_page3 p{
+.title_page3 p {
     color: #3f495a;
     font-size: 14px;
     text-align: center;
 }
 
-.title_page3{
+.title_page3 {
     width: 100%;
     height: 100%;
     background: url(../img/%D1%84%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BA%D0%B5%D0%B9%D1%81%D0%B0.jpg) center 120px/800px 400px no-repeat;
 }
 
-.title_page3 li1{
+.title_page3 li1 {
     color: #3f495a;
     display: block;
     margin: 450px 20px 20px 340px;
 }
 
-.title_page3 li2{
-    color:#3f495a;
+.title_page3 li2 {
+    color: #3f495a;
     display: block;
     margin: 0px 20px 20px 340px;
 }
 
-.title_page3 li3{
+.title_page3 li3 {
     color: #3f495a;
     display: block;
     margin: -100px 20px 20px 600px;
 }
 
-.title_page3 input{
+.title_page3 input {
     color: white;
     background: url(../img/%D0%B7%D0%B5%D0%BB%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%D1%83%D0%B3.png) no-repeat;
     width: 180px;
@@ -247,21 +428,28 @@ nav{
     margin: 17px 55px 20px 340px;
 }
 
-.title_page4 h3{
+.title_page3 input:hover{
+    border: 2px solid #3f495a;
+    border-radius: 7px;
+    color: #3f495a;
+}
+
+.title_page4 h3 {
     color: #263244;
     font-size: 26px;
     font-weight: bold;
-    text-align: center; 
+    text-align: center;
     height: 60px;
 }
-.title_page4 h5{
+
+.title_page4 h5 {
     color: #263244;
     font-size: 18px;
     margin-left: 25%;
     font-weight: bold;
 }
 
-.title_page4 select{
+.title_page4 select {
     background: url(../img/1.jpg) no-repeat;
     width: 800px;
     height: 30px;
@@ -269,36 +457,30 @@ nav{
     margin: 10px 25% 30px;
 }
 
-.title_page4{
+.title_page4 {
     background: url(../img/%D0%BB%D0%B8%D0%BD%D0%B8%D1%8F%20%D0%BF%D0%BE%D0%B4%D0%B8%D1%82%D0%BE%D0%B3%D0%B0.jpg) 54.5% 315px/800px 2px no-repeat;
 }
 
-.title_page4>p{
-    color:#263244;
+.title_page4 > p {
+    color: #263244;
     font-size: 16px;
     margin-left: 25%;
     font-weight: bold;
     padding-bottom: 2%;
 }
 
-.page_4_1{
-    width: 100%;
-    height: 400px;
-    background: url(../img/%D1%84%D0%BE%D0%BD%20c%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0.png) center/cover no-repeat;
-}
-
-.page_4_1 h2{
+.page_4_1 h2 {
     color: #263244;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
-    text-align: center; 
+    text-align: center;
     padding-top: 40px;
-    background: url(../img/%D1%81%D0%BC%D0%B0%D0%B9%D0%BB.png) 26% 160px/50px 50px no-repeat,url(../img/скобки.png) 42% 160px/63px 47px no-repeat, url(../img/галочка.png) 58% 160px/57px 48px no-repeat, url(../img/кубок.png) 74% 160px/57px 52px no-repeat, url(../img/%D0%A7%D0%B5%D1%80%D1%82%D0%B0%20%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0.png) center 80px no-repeat;
+    background: url(../img/%D1%81%D0%BC%D0%B0%D0%B9%D0%BB.png) 26% 160px/50px 50px no-repeat, url(../img/скобки.png) 42% 160px/63px 47px no-repeat, url(../img/галочка.png) 58% 160px/57px 48px no-repeat, url(../img/кубок.png) 74% 160px/57px 52px no-repeat, url(../img/%D0%A7%D0%B5%D1%80%D1%82%D0%B0%20%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0.png) center 80px no-repeat;
     height: 380px;
 }
 
-.page_4_1 p1{
+.page_4_1 p1 {
     display: block;
     color: #323e4f;
     font-size: 35px;
@@ -306,7 +488,7 @@ nav{
     margin: -140px 10px 20px 24.7%;
 }
 
-.page_4_1 p2{
+.page_4_1 p2 {
     display: block;
     color: #323e4f;
     font-size: 35px;
@@ -314,7 +496,7 @@ nav{
     margin: -70px 10px 20px 39.5%;
 }
 
-.page_4_1 p3{
+.page_4_1 p3 {
     display: block;
     color: #323e4f;
     font-size: 35px;
@@ -322,7 +504,7 @@ nav{
     margin: -70px 10px 20px 55.5%;
 }
 
-.page_4_1 p4{
+.page_4_1 p4 {
     display: block;
     color: #323e4f;
     font-size: 35px;
@@ -330,101 +512,107 @@ nav{
     margin: -70px 10px 20px 71.7%;
 }
 
-.page_4_1 h7{
+.page_4_1 h7 {
     color: #323e4f;
     font-size: 15px;
     text-transform: uppercase;
     margin: 0px 10px 20px 20.5%;
 }
 
-.page_4_1 h8{
+.page_4_1 h8 {
     color: #323e4f;
     font-size: 15px;
     text-transform: uppercase;
     margin: 0px 10px 20px 38.5%;
 }
 
-.page_4_1 h9{
+.page_4_1 h9 {
     color: #323e4f;
     font-size: 15px;
     text-transform: uppercase;
     margin: 0px 10px 20px 52%;
 }
 
-.page_4_1 h10{
+.page_4_1 h10 {
     color: #323e4f;
     font-size: 15px;
     text-transform: uppercase;
     margin: 0px 10px 20px 68%;
 }
 
-.page_42 h2{
+.paralax{
+    background: url(../img/%D1%84%D0%BE%D0%BD%20c%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0.png) center/cover no-repeat;
+    background-attachment: fixed;
+    height: 400px;
+}
+
+.page_42 h2 {
     color: #263244;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
-    text-align: center; 
+    text-align: center;
     padding-top: 40px;
     background: url(../img/%D1%84%D0%BE%D1%82%D0%BA%D0%B0.png) center 140px/100px 100px no-repeat, url(../img/%D0%A7%D0%B5%D1%80%D1%82%D0%B0%20%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0.png) center 80px no-repeat;
     height: 300px;
 }
 
-.page_42 p{
+.page_42 p {
     color: #243042;
     font-size: 16px;
     text-align: center;
     padding-bottom: 40px;
 }
 
-.page_42{
+.page_42 {
     background: url(../img/Оранж.png) 48% 415px/10px no-repeat, url(../img/Оранжкопия.png) 50% 415px/10px no-repeat, url(../img/Оранжкопия2.png) 52% 415px/10px no-repeat;
     margin-bottom: 40px;
 }
 
-.title_page5 {
+.page5{
     width: 100%;
     height: 100%;
     background: url(../img/%D0%B3%D0%B5%D0%BE%D0%BA%D0%B0%D1%80%D1%82.png) 38% 230px no-repeat, url(../img/конверт.png) 50% 234px no-repeat, url(../img/труба.png) 61% 230px no-repeat, url(../img/%D0%BC%D0%BE%D0%B8%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D1%8B%D1%84%D0%BE%D0%BD.png) center/contain no-repeat;
 }
 
-.title_page5 h2{
+.page5 h2 {
     color: white;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
-    text-align: center; 
+    text-align: center;
     padding-top: 100px;
     background: url(../img/%D0%A7%D0%B5%D1%80%D1%82%D0%B0%20%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0.png) center 140px no-repeat;
     height: 150px;
 }
 
-.title_page5 p1{
+.page5 p1 {
     color: white;
     display: block;
     text-align: center;
     padding: 20px;
 }
 
-.title_page5 address{
+.page5 address {
     color: white;
     text-align: center;
     margin-left: -24%;
     padding-top: 70px;
 }
 
-.title_page5 h3{
+.page5 h3 {
     color: white;
     margin-left: 45%;
     margin-top: -20px;
 }
 
-.title_page5 p{
+.page5 p {
     color: white;
     margin-left: 58%;
     margin-top: -15px;
 }
 
-.title_page5 h4{
+.page5 h4 {
     color: white;
     text-align: center;
     margin-top: 50px;
@@ -433,7 +621,7 @@ nav{
     font-weight: bold;
 }
 
-.title_page5 input[type=text1]{
+.page5 input[type=text1] {
     width: 300px;
     height: 27px;
     background: url(../img/%D0%98%D0%BC%D1%8F.png) 30% no-repeat;
@@ -441,14 +629,14 @@ nav{
     padding: 5px;
 }
 
-.title_page5 input[type=text2]{
+.page5 input[type=email] {
     width: 300px;
     height: 27px;
     background: url(../img/%D0%98%D0%BC%D1%8F.png) 30% no-repeat;
     padding: 5px;
 }
 
-.title_page5 textarea{
+.page5 textarea {
     width: 610px;
     height: 60px;
     background: url(../img/%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B5.png) no-repeat;
@@ -456,7 +644,7 @@ nav{
     padding: 5px;
 }
 
-.title_page5 input[type=submit]{
+.page5 input[type=submit] {
     color: white;
     border: 2px solid white;
     border-radius: 5px;
@@ -466,6 +654,14 @@ nav{
     width: 120px;
     height: 40px;
     margin: 20px 10px 5px 46%;
-    
-    
+    transition: all 0.4s;
+}
+
+.page5 input[type=submit]:hover{
+    background-color: white;
+    color: #111b2b;
+}
+
+.page5 input[type=submit]:active{
+    transform: scale(1.1);
 }
