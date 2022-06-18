@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #f3eff3;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #f3eff3;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #384a63;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background: #344051;
+    position: fixed;
+}
+
+.logo {
+    color: white;
+    font-size: 18px;
+    line-height: 50px;
+    float: left;
+    -webkit-animation: logo 2s;
+    -o-animation: logo 2s;
+    animation: logo 2s;
+}
+
+@keyframes logo {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.col{
+    float: left;
+    line-height: 50px;
+    color: white;
+    font-size: 14px;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-animation: _menu 0.4s forwards;
+    -o-animation: _menu 0.4s forwards;
+    animation: _menu 0.4s forwards;
+    opacity: 0;
+
+}
+
+@keyframes _menu {
+    from {
+        opacity: 0;
+        margin-top: -50px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+
+
