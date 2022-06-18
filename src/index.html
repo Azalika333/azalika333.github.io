@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Азалия Хафизова</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader__row">
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.body.classList.add('loaded_hiding');
+            window.setTimeout(function() {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+            }, 500);
+        }
+
+    </script>
+
+    <header>
+        <nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="logo">Азалия Хафизова</div>
+                    </div>
+                        <div class="col offset-4"><a href="#">Обо мне</a></div>
+                        <div class="col"><a href="#">Услуги</a></div>
+                        <div class="col"><a href="#">Кейсы</a></div>
+                        <div class="col"><a href="#">Прайс</a></div>
+                        <div class="col"><a href="#">Отзывы</a></div>
+                        <div class="col"><a href="#">Контакты</a></div>
+                    </div>  
+                </div>
+        </nav>
+    </header>
+
+</body>
+
+</html>
